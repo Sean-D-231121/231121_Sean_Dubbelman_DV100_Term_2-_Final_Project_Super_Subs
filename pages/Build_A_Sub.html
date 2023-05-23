@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Build a sub</title>
+    <title>Build-a-sub</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans:wght@400;500;600;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans:wght@400;500;600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -31,27 +34,463 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>'
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">SuperSubs</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark orange-bar">
+      <a class="navbar-brand" href="../index.html"
+        ><img src="../assets/logo.png" alt="logo"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="../index.html">Home</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Build-a-sub <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Checkout.html">Checkout</a>
-      </li>
-  </div>
-</nav>
-    <div class="container"></div>
-    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Build a sub <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Checkout.html">Checkout</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-7">
+          <form class="form-background">
+            <div class="mb-3">
+              <h4 for="formGroupExampleInput" class="form-label">
+                Name of Subway Sandwich
+              </h4>
+              <input
+                type="text"
+                class="form-control"
+                id="formGroupExampleInput"
+                placeholder="Subway name"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <h4 for="breads" class="form-label">Base</h4>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="breads"
+                  id="italianBread"
+                  value="option1"
+                  checked
+                />
+                <label class="form-check-label" for="italianBread">
+                  Italian bread
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="breads"
+                  id="multigrainFlatbread"
+                  value="option2"
+                />
+                <label class="form-check-label" for="multigrainFlatbread">
+                  Multigrain flatbread
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="breads"
+                  id="sourdoughBread"
+                  value="option3"
+                />
+                <label class="form-check-label" for="sourdoughBread">
+                  Sourdough bread
+                </label>
+              </div>
+            </div>
+            <h4 class="form-label">Toppings</h4>
+            <h5>Meats</h5>
+            <div class="form-check form-check-inline">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox1"
+                  value="option1"
+                />
+                <label class="form-check-label" for="inlineCheckbox1"
+                  >Chicken breast</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox2"
+                  value="option2"
+                />
+                <label class="form-check-label" for="inlineCheckbox2"
+                  >Roast beef</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Ham</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Bacon</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Biltong</label
+                >
+              </div>
+            </div>
+            <div class="form-check form-check-inline">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Pepperoni</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Tuna</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Meatballs</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Salami</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Steak</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Sausage</label
+                >
+              </div>
+            </div>
+            <h5>Veggies</h5>
+            <div class="form-check form-check-inline">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Lettuce</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Spinach</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Tomatoes</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Jalapeños</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Black olives</label
+                >
+              </div>
+            </div>
+            <div class="form-check form-check-inline">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Cucumbers</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Pickles</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Red onions</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Gherkins</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Avocado</label
+                >
+              </div>
+            </div>
+            <!--End of veggies column 2-->
+            <h5>Sauces</h5>
+            <div class="form-check form-check-inline">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Mayo</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Peri-Peri(Super-hot)</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Sweet chili</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >BBQ</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Tomato sauce</label
+                >
+              </div>
+            </div>
+            <!--End of sauces-->
+            <h5>How many do you want?</h5>
+            <label for="SubwayAmount" class="form-label">Quantity (Max-10):</label>
+            <input
+              type="range"
+              class="form-range"
+              value="1"
+              min="1"
+              max="10"
+              step="1"
+              id="SubwayAmount"
+            />
+            <button class="btn btn-primary" type="submit">Add to order</button>
+          </form>
+          <!--End of form-->
+        </div>
+      </div>
+    </div>
+    <div class="card foot">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <div class="card-body">
+              <img
+                class="logo"
+                src="../assets/logo.png"
+                alt="application-logo"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card-body">
+              <h5 class="card-title">Copyright © 2023 SuperSubs</h5>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card-body">
+              <a href="https://www.facebook.com/"
+                ><img
+                  src="../assets/facebook.png"
+                  alt="Facebook"
+                  class="social"
+              /></a>
+              <a href="https://www.instagram.com/"
+                ><img
+                  src="../assets/instagram.png"
+                  alt="Instagram"
+                  class="social"
+              /></a>
+              <a href="https://twitter.com/"
+                ><img src="../assets/twitter.png" alt="Twitter" class="social"
+              /></a>
+              <a href="https://www.youtube.com/"
+                ><img src="../assets/youtube.png" alt="Youtube" class="social"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
