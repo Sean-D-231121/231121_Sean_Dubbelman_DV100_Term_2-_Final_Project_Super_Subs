@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+
     <title>Build-a-sub</title>
     <link
       rel="stylesheet"
@@ -374,6 +376,65 @@
               </div>
             </div>
             <!--End of veggies column 2-->
+            <h5>Cheeses</h5>
+            <div class="form-check form-check-inline"> 
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Cheddar</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Swiss</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Parmesan</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Blue cheese</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineCheckbox3"
+                  >Mozzarella</label
+                >
+              </div>
+            </div>
+            <!--End of Cheeses column-->
             <h5>Sauces</h5>
             <div class="form-check form-check-inline">
               <div class="form-check form-check-inline">
@@ -436,15 +497,15 @@
             <h5>How many do you want?</h5>
             <label for="SubwayAmount" class="form-label">Quantity (Max-10):</label>
             <input
-              type="range"
-              class="form-range"
+              type="number"
+              class="form-number"
               value="1"
               min="1"
               max="10"
               step="1"
               id="SubwayAmount"
             />
-            <button class="btn btn-primary" type="submit">Add to order</button>
+            <button class="btn sub-order-button btn-lg" type="submit">Add to order</button>
           </form>
           <!--End of form-->
         </div>
