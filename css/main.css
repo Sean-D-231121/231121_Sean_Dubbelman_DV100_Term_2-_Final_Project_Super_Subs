@@ -91,7 +91,7 @@ body{
     margin-top: 10px;
 }
 .form-background{
-    background-color: #41644A;
+    background-color: #263A29;
     margin-top: 50px;
     margin-bottom: 50px;
     color: white;
@@ -99,11 +99,17 @@ body{
     border-radius: 20px;
 }
 .card-background{
-    background-color: #41644A;
+    background-color: #263A29;
 }
 .card-header{
     background-color: #E86A33;
 
+}
+.card-button{
+    background-color: #E86A33;
+}
+.card-button:hover{
+    background-color: #E55807;
 }
 .btn-dark{
     color:#F2E3DB;
@@ -169,4 +175,26 @@ h5{
 .about-us-paragraph{
     width: 40%;
     margin: 0 auto
+}
+.reactivePrice{
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color:#E86A33;
+
+}
+.card-image{
+    width: 50%;
+    height: 150px;
+    margin: auto;
+}
+.custom-card{
+   width: 100%;
+   background-color: #263A29;
+   color: #F2E3DB;
+}
+.collapse-background{
+    background-color: #263A29;
 }

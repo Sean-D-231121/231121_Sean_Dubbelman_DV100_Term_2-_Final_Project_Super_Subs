@@ -19,7 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans:wght@400;500;600;800;900&display=swap"
       rel="stylesheet"
     />
-    <link src="../js/index.js">
+    <script src="../js/index.js"> </script>
     <link rel="stylesheet" href="../css/main.css" />
     
     <script
@@ -82,7 +82,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-6">
-          <form id="subwayForm" class="form-background" onchange="realTimeCost()">
+          <form id="subwayForm" class="form-background" onchange="onTimePricing()">
             <div class="mb-3">
               <h4 for="subwayName" class="form-label">
                 Name of Subway Sandwich
@@ -103,7 +103,7 @@
                   type="radio"
                   name="breads"
                   id="italianBread"
-                  value="Italian"
+                  value="Italian bread"
                   data-cost = "10"
                   checked
                 />
@@ -117,10 +117,10 @@
                   type="radio"
                   name="breads"
                   id="multigrainFlatbread"
-                  value="Multi grain flat"
+                  value="Multigrain flatbread"
                   data-cost = "15"
                 />
-                <label class="form-check-label" for="multigrainFlatbread">
+                <label class="form-check-label" for = "multigrainFlatbread">
                   Multigrain flatbread
                 </label>
               </div>
@@ -130,7 +130,7 @@
                   type="radio"
                   name="breads"
                   id="sourdoughBread"
-                  value="Sourdough"
+                  value="Sourdough bread"
                   data-cost = "20"
                 />
                 <label class="form-check-label" for="sourdoughBread">
@@ -145,7 +145,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="chickenBreast"
                   value="Chicken breast"
                   data-cost="10"
@@ -158,6 +158,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
+                  name = "meat"
                   id="roastBeef"
                   value="Roast beef"
                   data-cost="15"
@@ -170,7 +171,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="ham"
                   value="Ham"
                   data-cost="10"
@@ -183,7 +184,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="bacon"
                   value="Bacon"
                   data-cost="20"
@@ -196,7 +197,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="biltong"
                   value="Biltong"
                   data-cost="25"
@@ -211,7 +212,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="pepperoni"
                   value="Pepperoni"
                   data-cost="13"
@@ -224,7 +225,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="tuna"
                   value="Tuna"
                   data-cost="18"
@@ -237,12 +238,12 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="meatballs"
                   value="Meatballs"
                   data-cost="16"
                 />
-                <label class="form-check-label" for="Meatballs"
+                <label class="form-check-label" for="meatballs"
                   >Meatballs</label
                 >
               </div>
@@ -250,7 +251,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="salami"
                   value="Salami"
                   data-cost="14"
@@ -263,7 +264,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="steak"
                   value="Steak"
                   data-cost="10"
@@ -276,7 +277,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "meat"
                   id="sausage"
                   value="Sausage"
                   data-cost="18"
@@ -292,7 +293,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="lettuce"
                   value="Lettuce"
                   data-cost="4"
@@ -305,7 +306,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="spinach"
                   value="Spinach"
                   data-cost="5"
@@ -318,7 +319,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="tomatoes"
                   value="Tomatoes"
                   data-cost="2"
@@ -331,7 +332,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="jalapeños"
                   value="Jalapeños"
                   data-cost="8"
@@ -344,7 +345,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="blackOlives"
                   value="Black olives"
                   data-cost="4"
@@ -359,7 +360,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="cucumbers"
                   value="Cucumbers"
                   data-cost="2"
@@ -372,7 +373,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="pickles"
                   value="Pickles"
                   data-cost="8"
@@ -385,7 +386,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="redOnions"
                   value="Red onions"
                   data-cost="5"
@@ -398,7 +399,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="gherkins"
                   value="Gherkins"
                   data-cost="2"
@@ -411,7 +412,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "veg"
                   id="avocado"
                   value="Avocado"
                   data-cost="6"
@@ -428,7 +429,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "cheese"
                   id="cheddar"
                   value="Cheddar"
                   data-cost="8"
@@ -441,7 +442,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "cheese"
                   id="swiss"
                   value="Swiss"
                   data-cost="14"
@@ -454,7 +455,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "cheese"
                   id="parmesan"
                   value="Parmesan"
                   data-cost="7"
@@ -467,7 +468,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "cheese"
                   id="blueCheese"
                   value="Blue cheese"
                   data-cost="2"
@@ -481,7 +482,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "cheese"
                   id="mozzarella"
                   value="Mozzarella"
                   data-cost="8"
@@ -498,7 +499,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "sauces"
                   id="mayo"
                   value="Mayo"
                   data-cost="2"
@@ -511,7 +512,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "sauces"
                   id="peri-peri"
                   value="Peri-Peri"
                   data-cost="4"
@@ -524,7 +525,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "sauces"
                   id="sweetChili"
                   value="Sweet chili"
                   data-cost="2"
@@ -537,7 +538,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "sauces"
                   id="bbq"
                   value="BBQ"
                   data-cost="2"
@@ -550,7 +551,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name = "toppings"
+                  name = "sauces"
                   id="tomatoSauce"
                   value="Tomato sauce"
                   data-cost="2"
@@ -562,7 +563,7 @@
             </div>
             <!--End of sauces-->
             <h5>How many do you want?</h5>
-            <label for="SubwayAmount" class="form-label">Quantity (Max-10):</label>
+            <label for="subwayAmount" class="form-label">Quantity (Max-10):</label>
             <input
               type="number"
               class="form-number"
@@ -570,19 +571,21 @@
               min="1"
               max="10"
               step="1"
-              id="SubwayAmount"
+              id="subwayAmount"
             />
-            <button class="btn sub-order-button btn-lg" type="submit">Add to order</button>
-            <div class="right">
-              <div class="orderCost" id="realTimeCost">R0.00</div>
-            </div>
+            <button class="btn sub-order-button btn-lg" type = "button" onclick="CreateSub(); showOrder()">Add to order</button>
+           <div class="reactivePrice">
+            <h2 id = "onTimePrice"> R0.00</h2>
+           </div>
           </form>
           <!--End of form-->
         </div>
-        <div class="col-4">
-        <div id="orders">
+          
+        <div id="subways" class="col-6" >
         
       </div>
+      </div>
+      <h2 id="orderTotal">R 0.00</h2>
       </div>
       </div>
     </div>
