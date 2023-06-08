@@ -573,7 +573,14 @@
               step="1"
               id="subwayAmount"
             />
+            <div class="row">
+              <div class="col-6">
+            <h5 class="errorText" id = "errors"></h5>
+            </div>
+            <div class="col-6">
             <button class="btn sub-order-button btn-lg" type = "button" onclick="CreateSub(); showOrder()">Add to order</button>
+            </div>
+            </div>
            <div class="reactivePrice">
             <h2 id = "onTimePrice"> R0.00</h2>
            </div>
@@ -581,11 +588,20 @@
           <!--End of form-->
         </div>
           
-        <div id="subways" class="col-6" >
-        
+        <div  class="col-6" >
+          <div class="card-container">
+
+          
+        <div class="row" id="subways">
+
+        </div>
+        <div class="finalTotal">
+         <h2 class="ordersTotal" id="orderTotal">R 0.00</h2>
+         </div>
+         </div>
       </div>
       </div>
-      <h2 id="orderTotal">R 0.00</h2>
+     
       </div>
       </div>
     </div>

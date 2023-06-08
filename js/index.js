@@ -1,5 +1,14 @@
-let subwayOrder = []
-console.log("Hello")
+let subwayOrder = [];
+ToppingsFunction = (topsArray, toppingClass, countTop, total ) =>{
+   for (let i = 0; i < toppingClass.length; i++) {
+     if (toppingClass[i].checked === true) {
+       topsArray.push(toppingClass[i].value);
+       total += +toppingClass[i].dataset.cost;
+        countTop += 1;
+     }
+   }
+   return  [countTop, total]
+}
 CreateSub = () =>{
     let subwayTotal = 0
     let meats = document.getElementsByName("meat");
@@ -13,7 +22,9 @@ CreateSub = () =>{
     let subwayName = document.getElementById("subwayName").value;
     let breadOptions = document.getElementsByName("breads");
     let amount = document.getElementById("subwayAmount").value;
+    let errors = document.getElementById("errors")
     let breadVal;
+    let countToppings = 0;
     let quantity;
     for ( let i = 0;  i < breadOptions.length; i++){
         if(breadOptions[i].checked === true){
@@ -21,32 +32,39 @@ CreateSub = () =>{
             subwayTotal += +breadOptions[i].dataset.cost;
         }
     }
-
-    for (let i = 0; i < meats.length; i++) {
-      if (meats[i].checked === true) {
-        meatArray.push(meats[i].value);
-        subwayTotal += +meats[i].dataset.cost;
-      }
-    }
-    for (let i = 0; i < vegs.length; i++) {
-      if (vegs[i].checked === true) {
-        vegArray.push(vegs[i].value);
-        subwayTotal += +vegs[i].dataset.cost;
-      }
-    }
-    for (let i = 0; i < cheese.length; i++) {
-      if (cheese[i].checked === true) {
-        cheeseArray.push(cheese[i].value);
-        subwayTotal += +cheese[i].dataset.cost;
-      }
-    }
+     [countToppings, subwayTotal] = ToppingsFunction(meatArray, meats, countToppings, subwayTotal);
+     [countToppings, subwayTotal] = ToppingsFunction(vegArray, vegs, countToppings, subwayTotal);
+     [countToppings, subwayTotal] = ToppingsFunction(cheeseArray,cheese,countToppings,subwayTotal);
     for (let i = 0; i < sauces.length; i++) {
       if (sauces[i].checked === true) {
         sauceArray.push(sauces[i].value);
         subwayTotal += +sauces[i].dataset.cost;
       }
     }
-
+    if(subwayName.length === 0){
+      errors.classList.remove("errorAnimator");
+      errors.classList.add("errorAnimator");
+      return errors.innerHTML= "Please enter your sub's name"
+    }
+    else if(sauceArray.length === 0 && countToppings < 5){
+      errors.classList.remove("errorAnimator");
+      errors.classList.add("errorAnimator");
+      return errors.innerHTML = "Please add a sauce and at least 5 toppings"
+    }
+    else if(countToppings < 5 ){
+      errors.classList.remove("errorAnimator");
+      errors.classList.add("errorAnimator");
+        return errors.innerHTML = "Please add at least 5 toppings";
+    }
+    else if(sauceArray.length === 0){
+      errors.classList.remove("errorAnimator");
+      errors.classList.add("errorAnimator");
+      return errors.innerHTML ="Please add a sauce"
+    }
+    else{
+      errors.classList.remove("errorAnimator")
+      errors.innerHTML = ""
+    }
     quantity = +amount
     subwayTotal = subwayTotal * quantity
     subwayOrder.push({
@@ -62,6 +80,7 @@ CreateSub = () =>{
     )
     console.log(subwayOrder)
     document.getElementById("onTimePrice").innerHTML = "R 0.00"
+    document.getElementById("subwayForm").reset()
 
 }
 
@@ -100,6 +119,7 @@ onTimePricing = () => {
        activePricing += +sauces[i].dataset.cost;
      }
    }
+
    activePricing = activePricing * amount
    document.getElementById("onTimePrice").innerHTML = "R " + activePricing + ".00"
 }
@@ -121,8 +141,10 @@ showOrder = () => {
     finalTotal += subPrice;
 
     subwayArea.innerHTML += `
+    <div class="col-6">
     <div class="card card-background" style="width: 18rem; float: left; border-radius: 15px; margin-top: 50px; margin-left: 10px; color: #F2E3DB">
   <div class="card-body">
+  <img class="card-image" src="../assets/sandwich.png" >
     <h5 class="card-title">Name: ${name}</h5>
     <p class="card-text">Bread: ${breadType}</p>
     <button class="btn btn-primary card-button" type="button" data-toggle="collapse" data-target="#toppingsCollapse-${i}" aria-expanded="false" aria-controls="collapseExample">
@@ -131,14 +153,25 @@ showOrder = () => {
 </p>
 <div class="collapse" id="toppingsCollapse-${i}">
   <div class="card card-body collapse-background ">
-   ${meats},${vegs},${cheese},${sauces}
+   ${meats.join(", ")}, ${vegs.join(", ")}, ${cheese.join(", ")}, ${sauces.join(
+      ", "
+    )}
   </div>
 </div>
+<div class = "row">
+<div class = "col-6">
+ <p class = "card-text " >quantity: ${subQuantity}</p>
+ </div>
+ <div class = "col-6">
+  <p class = "card-text pricesRight">R${subPrice}.00</p>
   </div>
-  <h5 style="float: left">quantity: ${subQuantity}</h5>
-  <h5 >R${subPrice}.00</h5>
+  </div>
+  </div>
+ 
+</div>
 </div>
   `;
   }
+  total.innerHTML = "R " + finalTotal + ".00"
   
 }

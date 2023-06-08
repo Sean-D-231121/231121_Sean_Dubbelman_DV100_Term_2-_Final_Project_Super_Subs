@@ -91,7 +91,7 @@ body{
     margin-top: 10px;
 }
 .form-background{
-    background-color: #263A29;
+    background-color: #41644A;
     margin-top: 50px;
     margin-bottom: 50px;
     color: white;
@@ -100,17 +100,22 @@ body{
 }
 .card-background{
     background-color: #263A29;
+    
 }
+
 .card-header{
     background-color: #E86A33;
 
 }
 .card-button{
     background-color: #E86A33;
+    border: none;
 }
 .card-button:hover{
     background-color: #E55807;
+    border: none;
 }
+
 .btn-dark{
     color:#F2E3DB;
     background-color:#E86A33;
@@ -188,7 +193,7 @@ h5{
 .card-image{
     width: 50%;
     height: 150px;
-    margin: auto;
+    margin-left: 25%;
 }
 .custom-card{
    width: 100%;
@@ -196,5 +201,55 @@ h5{
    color: #F2E3DB;
 }
 .collapse-background{
-    background-color: #263A29;
+    background-color: #41644A;
+}
+.ordersTotal{
+    
+    text-align: center;
+    color:#F2E3DB
+    
+}
+.finalTotal{
+    width: 90%;
+    margin-left: 3%; 
+    border-radius: 10px;
+    position:absolute;
+    bottom: 10px;
+background-color: #E86A33;
+margin-top: 10px;
+}
+.card-container{
+    width: 100%;
+    min-height: 800px;
+    background-color: #41644A;
+    margin-top: 50px;
+    border-radius: 10px;
+    margin-bottom:30px;
+    padding-bottom: 100px;
+    position: relative;
+}
+.errorText{
+    color: #E55807;
+    border-radius: 2px;
+    
+}
+.errorAnimator{
+    animation-name: errorAnimation ;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-delay: 1s;
+}
+@keyframes errorAnimation {
+    from {background-color: #41644A; color: #E55807;}
+    to {background-color: #263A29; color: #E86A33;}
+}
+
+.quantityLeft {
+    float: left;
+    margin-right: 30%;
+}
+.pricesRight{
+    float: right;
+    margin-right: 10px;
+    
 }
