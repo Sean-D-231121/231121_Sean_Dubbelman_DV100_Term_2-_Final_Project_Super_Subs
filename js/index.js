@@ -1,4 +1,6 @@
 let subwayOrder = [];
+
+
 ToppingsFunction = (topsArray, toppingClass, countTop, total ) =>{
    for (let i = 0; i < toppingClass.length; i++) {
      if (toppingClass[i].checked === true) {
@@ -42,27 +44,18 @@ CreateSub = () =>{
       }
     }
     if(subwayName.length === 0){
-      errors.classList.remove("errorAnimator");
-      errors.classList.add("errorAnimator");
       return errors.innerHTML= "Please enter your sub's name"
     }
     else if(sauceArray.length === 0 && countToppings < 5){
-      errors.classList.remove("errorAnimator");
-      errors.classList.add("errorAnimator");
       return errors.innerHTML = "Please add a sauce and at least 5 toppings"
     }
     else if(countToppings < 5 ){
-      errors.classList.remove("errorAnimator");
-      errors.classList.add("errorAnimator");
         return errors.innerHTML = "Please add at least 5 toppings";
     }
     else if(sauceArray.length === 0){
-      errors.classList.remove("errorAnimator");
-      errors.classList.add("errorAnimator");
       return errors.innerHTML ="Please add a sauce"
     }
     else{
-      errors.classList.remove("errorAnimator")
       errors.innerHTML = ""
     }
     quantity = +amount
@@ -78,7 +71,6 @@ CreateSub = () =>{
         subwayAmount: quantity
     }
     )
-    console.log(subwayOrder)
     document.getElementById("onTimePrice").innerHTML = "R 0.00"
     document.getElementById("subwayForm").reset()
 
@@ -125,6 +117,27 @@ onTimePricing = () => {
 }
 
 showOrder = () => {
+  checkOrder = (meat, veg, cheeses, sauces) =>{
+    let orderLayout;
+    if (meat.length === 0 && veg.length === 0) {
+      orderLayout = (cheeses.join(", ") + ", " + sauces.join(", "));
+    } else if (cheeses.length === 0 && meat.length === 0) {
+      orderLayout = (veg.join(", ") + ", " + sauces.join(", "));
+    } else if (cheeses.length === 0 && veg.length === 0) {
+      orderLayout = (meat.join(", ") + ", " + sauces.join(", "));
+    } else if (cheeses.length === 0) {
+      orderLayout = ( meat.join(", ") + ", " + veg.join(", ") + ", " + sauces.join(", "));
+    } else if (veg.length === 0) {
+      orderLayout = (meat.join(", ") + ", " + cheeses.join(", ") + ", " + sauces.join(", "));
+    } else if (meat.length === 0) {
+      orderLayout = (veg.join(", ") + ", " + cheeses.join(", ") + ", " + sauces.join(", "));
+    }
+    else{
+      orderLayout = (meat.join(", ") + ", " + veg.join(", ") + ", " + cheeses.join(", ") + ", " + sauces.join(", "));
+    }
+    return orderLayout
+
+  }
   let subwayArea = document.getElementById("subways");
   let total = document.getElementById("orderTotal");
   let finalTotal = 0
@@ -153,9 +166,7 @@ showOrder = () => {
 </p>
 <div class="collapse" id="toppingsCollapse-${i}">
   <div class="card card-body collapse-background ">
-   ${meats.join(", ")}, ${vegs.join(", ")}, ${cheese.join(", ")}, ${sauces.join(
-      ", "
-    )}
+  ${checkOrder(meats, vegs, cheese, sauces)} 
   </div>
 </div>
 <div class = "row">
@@ -173,5 +184,11 @@ showOrder = () => {
   `;
   }
   total.innerHTML = "R " + finalTotal + ".00"
-  
+  if(subwayOrder.length > 0){
+  console.log(subwayOrder);}
+}
+
+SubwayCheck = () => {
+  let subInfo = JSON.stringify(subwayOrder)
+  localStorage.setItem('subways', subInfo)
 }
