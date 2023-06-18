@@ -51,6 +51,11 @@ body{
     background-color: #E86A33;
     color: white;
 }
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
 .social{
     width: 40px;
     height: 40px;
@@ -240,6 +245,18 @@ margin-top: 10px;
 .form-check-input {
     accent-color:  #E86A33;
 }
+.sub-checkout-button{
+    background-color: #E86A33;
+    color:#F2E3DB;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 90px;
+    margin-left: 430px;
+
+}
+.sub-checkout-button:hover{
+    background-color: #E55807;
+}
 .card-container{
     width: 100%;
     min-height: 823px;
@@ -247,13 +264,16 @@ margin-top: 10px;
     margin-top: 50px;
     border-radius: 10px;
     margin-bottom:30px;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
     position: relative;
 }
 .errorText{
     color: #E86A33;
     border-radius: 2px;
     
+}
+.adjust-col-height{
+    min-height: 200px;
 }
 
 .quantityLeft {
@@ -264,4 +284,108 @@ margin-top: 10px;
     float: right;
     margin-right: 10px;
     
+}
+.heading-checkout-list{
+    float: left;
+    
+    background-color: #E55807;
+    color: #F2E3DB;
+    width: 17%;
+    height: 60px;
+    margin-left: 15px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.heading-center{
+    padding-top: 8px;
+}
+.headingRow{
+    width: 100%;
+    margin-top: 20px;
+}
+.checkout-right-col{
+    width: 100%;
+    background-color: #41644A;
+    color: white;
+    min-height: 800px;
+    border-radius: 20px;
+}
+.foot{
+    margin-top: 30px;
+}
+.checkout-order{
+    width: 100%;
+    
+}
+.order-cell{
+    float: left;
+    
+    background-color: #E55807;
+    color: #F2E3DB;
+    width: 17%;
+    height: 60px;
+    margin-left: 15px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.list-group-item{
+    background-color:#263A29;
+    color:#F2E3DB
+}
+.list-group-item:hover{
+    background-color:#41644A;
+    color:#F2E3DB
+}
+.list-group-item.active{
+    background-color: #E86A33;
+    border-color:#E86A33;
+}
+footer{
+    margin-top: auto;
+}
+.content-background{
+    background-color: #41644A;
+    border-radius: 15px;
+    color:#F2E3DB
+}
+.tab-content{
+    padding: 20px
+}
+.pricePosition{
+    text-align: center;
+}
+.adjust-col-height{
+    min-height: 400px;
+}
+.checkout-div{
+    background-color:#41644A;
+    padding-top: 20px;
+    color: #F2E3DB;
+    width:48%;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 20px;
+    position: fixed;
+}
+.normal-button{
+    background-color: #E86A33;
+    color: #F2E3DB;
+}
+.normal-button:hover{
+    background-color: #E55807;
+}
+.form-center{
+    margin-left: 60px;
+}
+.discount-entry-title{
+    width: 70%;
+    margin-top: 40px;
+}
+.totalAndPayment{
+   margin-top: 40px; 
+}
+.change-col-pos{
+    position:relative
 }

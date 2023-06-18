@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
-     <link rel="icon" type="image/x-icon" href="./assets/logo.png">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
 
     <title>Checkout</title>
     <link
@@ -20,10 +19,10 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans:wght@400;500;600;800;900&display=swap"
       rel="stylesheet"
     />
-    <link src="../js/index.js">
+     <script src="../js/checkout.js"> </script>
     <link rel="stylesheet" href="../css/main.css" />
   </head>
-  <body class="background-checkout">
+  <body onload="SubsCheckout()">
     <nav class="navbar navbar-expand-lg navbar-dark orange-bar">
       <a class="navbar-brand" href="../index.html"
         ><img src="../assets/logo.png" alt="logo"
@@ -66,47 +65,51 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="col-12">
-        <form class="form-background">
-          <div class="mb-3">
-            <label for="firstName" class="form-label">First name:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="firstName"
-              placeholder="First name"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="surname" class="form-label"
-              >Surname</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="surname"
-              placeholder="Surname"
-            />
-          </div>
-          <div class=" mb-3">
-            <h1> Subway sandwich orders & other info</h1> 
-          </div>
-          <div class="mb-3">
-            <label for="coupon" class="form-label"
-              >Surname</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="coupon"
-              placeholder="Enter Coupon Code"
-            />
-          </div>
-          <button class="btn btn-primary order-button" type="submit">Send us your sub</button>
-        </form>
+    <div class="container-fluid">
+      <div class="row adjust-col-height">
+      <div class="col-6">
+        <div id="showSubs">
+
+        </div>
       </div>
+<div class="col-6 change-col-pos">
+  <div class="checkout-div">
+    <div class="inviting-title">
+      <h3>Let's get those subways on their way!</h3>
     </div>
+    <div class="discount-entry-title">
+     <h3>
+      Enter Discount below:
+    </h3>
+    </div>
+    <form class="form-center">
+     
+  <div class="form-row align-items-center" style="margin-top: 20px">
+     
+    
+    <div class="col-auto">
+      <input type="text" class="form-control mb-2" id="discount" placeholder="Add discount">
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn normal-button mb-2" onclick="AddDiscount()">Add to discount</button>
+    </div>
+    </div>
+</form>
+<div class="row totalAndPayment">
+  <div class="col-6">
+    <h3 id="finalPurchasePrice"></h3>
+  </div>
+  <div class="col-6">
+    <form>
+        <button type="button" class="btn normal-button mb-2" onclick="resetOrder()">Ready to pay!</button>
+    </form>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
     <div class="card foot">
       <div class="container">
         <div class="row">

@@ -189,6 +189,13 @@ showOrder = () => {
 }
 
 SubwayCheck = () => {
+  if(subwayOrder.length > 0){
   let subInfo = JSON.stringify(subwayOrder)
   localStorage.setItem('subways', subInfo)
+  window.location.href = "../pages/Checkout.html";
+  }
+  else{
+    alert("please enter at least one subway")
+  }
 }
+
