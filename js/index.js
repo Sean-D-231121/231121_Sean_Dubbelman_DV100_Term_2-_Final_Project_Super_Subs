@@ -63,7 +63,7 @@ CreateSub = () =>{
       subwayTotal += 10;
     } else if (drinks === "Fanta Orange") {
       subwayTotal += 8;
-    } else if (drinks === "Fanta Grape") {
+    } else if (drinks === "Fanta grape") {
       subwayTotal += 10;
     } else if (drinks === "Coke zero") {
       subwayTotal += 8;
@@ -99,6 +99,7 @@ onTimePricing = () => {
   let sauces = document.getElementsByName("sauces");
    let breadOptions = document.getElementsByName("breads");
    let amount = document.getElementById("subwayAmount").value;
+   let drinks = document.getElementById("buddy").value; 
    
    for (let i = 0; i < breadOptions.length; i++) {
      if (breadOptions[i].checked === true) {
@@ -125,6 +126,17 @@ onTimePricing = () => {
      if (sauces[i].checked === true) {
        activePricing += +sauces[i].dataset.cost;
      }
+   }
+   if (drinks === "Coke") {
+     activePricing += 10;
+   } else if (drinks === "Fanta Orange") {
+     activePricing += 8;
+   } else if (drinks === "Fanta grape") {
+     activePricing += 10;
+   } else if (drinks === "Coke zero") {
+     activePricing += 8;
+   } else if (drinks === "Ginger beer") {
+     activePricing += 6;
    }
 
    activePricing = activePricing * amount

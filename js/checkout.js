@@ -65,12 +65,19 @@ AddDiscount = () =>{
     if (!appliedCoupon && gotDiscount === "12345"){
     appliedCoupon = true
     subwayTotal = subwayTotal - (subwayTotal * 0.15);
-    finalPrice.innerHTML = `R${subwayTotal}`;}
+    finalPrice.innerHTML = `Total: R${subwayTotal}`;}
 
 }
 
 resetOrder = () => {
-    localStorage.removeItem('subways');
-    window.location.href = '../index.html'
+   let subData = JSON.parse(localStorage.getItem("subways"));
+   if (subData === null){
+    alert("There are no subways in order list!!!")
+   }
+   else{
+    localStorage.removeItem("subways");
+    window.location.href = "../pages/Build_A_Sub.html";
+   }
+    
 }
     

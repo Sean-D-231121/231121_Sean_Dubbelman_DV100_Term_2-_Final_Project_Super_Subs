@@ -1,3 +1,6 @@
+html{
+    scrollbar-behavior: smooth;
+}
 *{
      
      font-family: 'Noto Sans', sans-serif;
