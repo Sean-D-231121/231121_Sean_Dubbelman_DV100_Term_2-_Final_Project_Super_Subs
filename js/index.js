@@ -28,6 +28,7 @@ CreateSub = () =>{
     let breadVal;
     let countToppings = 0;
     let quantity;
+    let drinks = document.getElementById('buddy').value;    
     for ( let i = 0;  i < breadOptions.length; i++){
         if(breadOptions[i].checked === true){
             breadVal = breadOptions[i].value;
@@ -58,6 +59,19 @@ CreateSub = () =>{
     else{
       errors.innerHTML = ""
     }
+    if (drinks === "Coke") {
+      subwayTotal += 10;
+    } else if (drinks === "Fanta Orange") {
+      subwayTotal += 8;
+    } else if (drinks === "Fanta Grape") {
+      subwayTotal += 10;
+    } else if (drinks === "Coke zero") {
+      subwayTotal += 8;
+    } else if (drinks === "Ginger beer") {
+      subwayTotal += 6;
+    } else{
+      drinks = 'none'
+    }
     quantity = +amount
     subwayTotal = subwayTotal * quantity
     subwayOrder.push({
@@ -68,7 +82,8 @@ CreateSub = () =>{
         cheeses : cheeseArray,
         sauce: sauceArray,
         cost : subwayTotal,
-        subwayAmount: quantity
+        subwayAmount: quantity,
+        drink: drinks
     }
     )
     document.getElementById("onTimePrice").innerHTML = "R 0.00"
@@ -149,6 +164,7 @@ showOrder = () => {
     let vegs = subwayOrder[i].veg;
     let cheese = subwayOrder[i].cheeses;
     let sauces = subwayOrder[i].sauce;
+    let drinks = subwayOrder[i].drink;
     let subQuantity = subwayOrder[i].subwayAmount;
     let subPrice = subwayOrder[i].cost;
     finalTotal += subPrice;
@@ -169,6 +185,7 @@ showOrder = () => {
   ${checkOrder(meats, vegs, cheese, sauces)} 
   </div>
 </div>
+ <p class="card-text">Drink: ${drinks}</p>
 <div class = "row">
 <div class = "col-6">
  <p class = "card-text " >quantity: ${subQuantity}</p>

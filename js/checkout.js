@@ -5,6 +5,12 @@ SubsCheckout = () => {
     let subData = JSON.parse(localStorage.getItem('subways'));
     let showSubsArea = document.getElementById("showSubs");
     let finalPrice = document.getElementById("finalPurchasePrice");
+    if(subData === null){
+      showSubsArea.innerHTML = `<h2 style = "text-align: center">No orders yet?</h2>
+      <img style= "margin-left: 250px" src = '../assets/Sad-face.png' alt ="sad face"></img>`
+    }else{
+
+    
     for(let i = 0; i < subData.length; i++){
         let subwayName = subData[i].subName;
         let cheese = subData[i].cheeses;
@@ -12,6 +18,7 @@ SubsCheckout = () => {
         let vegs = subData[i].veg;
         let sauces = subData[i].sauce;
         let breadType = subData[i].bread;
+        let drinks = subData[i].drink;
         let price = subData[i].cost;
         let subAmount = subData[i].subwayAmount;
         subwayTotal += price
@@ -44,13 +51,13 @@ SubsCheckout = () => {
       <div class="tab-pane fade" id="list-sauces-${i}" role="tabpanel" aria-labelledby="list-sauces-list-${i}"><h4>Sauces</h4><p>${sauces.join(
           ", "
         )}</p></div>
-      <div class="tab-pane fade" id="list-drinks-${i}" role="tabpanel" aria-labelledby="list-drinks-list-${i}">drinks</div>
+      <div class="tab-pane fade" id="list-drinks-${i}" role="tabpanel" aria-labelledby="list-drinks-list-${i}"><h4>Drink</h4><p>${drinks}</p></div>
       <div class="tab-pane fade" id="list-quantity-${i}" role="tabpanel" aria-labelledby="list-quantity-list-${i}"><h3>Quantity: ${subAmount}</h3></div>
     </div>
   </div>
 </div>`;
     }
-    finalPrice.innerHTML = `Total: R${subwayTotal}.00`
+    finalPrice.innerHTML = `Total: R${subwayTotal}.00`}
     }
 AddDiscount = () =>{
     let finalPrice = document.getElementById("finalPurchasePrice");
